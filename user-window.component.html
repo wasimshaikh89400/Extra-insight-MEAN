@@ -1,0 +1,45 @@
+<div>
+    <ul>
+        <li (click)="dispProf()">Profile</li>
+        
+        <li (click) = "content =! content">Content</li>
+        <div *ngIf="profile == true">
+           first name : {{ first_name}} <br>
+           Last name : {{ last_name}} <br>
+           Email : {{ email}} <br>
+           Contact_no :{{ contact_no}} <br>
+           Password : {{ password}} <br>
+           <input type="submit" value="update" (click)="updatedataBar()" >
+           <!-- update form for user profile -->
+               <div *ngIf="updateBar == true">
+                    <form #updatedData ngSubmit="updatedata(updatedData)">
+                        <input type="text" value="{{per_id}}" hidden>
+                        <label>First name</label> <input type="text" name="first_name" #first_name><br>
+                        <label>last name</label> <input type="text" name="last_name" #last_name><br>
+                        <label>Email</label> <input type="text" name="email" #email><br>
+                        <label>contact no</label> <input type="text" name="contact_no" #contact_no><br>
+                        <label>Password</label> <input type="text" name="password" #password><br>
+                        <input type="submit" value="update"  >
+                    </form>
+               </div>
+        </div>
+        <div>
+            <form #contentData ngSubmit = "onSubmitContent(contentData)">
+                <input type="text" name="contName" #contName [(ngModel)]="contName">
+                <input type="tetx" name="description" #description [(ngModel)]="description">
+                <input type="submit" value="add">
+
+            </form>
+
+            <div *ngFor="let cont of contentData">
+                <div>Name : {{ cont.content_name}}</div>  
+                <div>Description : {{ cont.discription}}</div>
+                <div>
+                    <span><button (click)="updateMyContent(cont._id)">Update</button></span>
+                    <span><button (click)="deleteContent(cont._id)" >Delete</button></span>
+                </div>
+
+            </div>
+        </div>
+    </ul>
+</div>

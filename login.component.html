@@ -1,0 +1,25 @@
+<div class="login-tbl">
+    <div class="login-lbl">Login</div><br><br>
+    <table align="center">
+        <tr>
+            <td><label>Email Id</label></td>
+            <td><input type="text" #email/></td>
+        </tr>
+        <br>
+        <tr>
+            <td><label>Password</label></td>
+            <td><input type="password" #password /></td>
+        </tr>
+        <br>
+        <tr>
+            <td colspan="2" align="center"><button class="btn" type="submit" (click)="checkLog(email.value , password.value)">Login</button></td>
+        </tr>
+        <br>
+        <div class="signUp-link">dont't have account! <a routerLink="/signup" style="color:white">SignUp here</a></div>
+    </table>  
+</div>
+
+<div *ngFor="let item of persondetails">
+   {{item._id}}
+</div>
+

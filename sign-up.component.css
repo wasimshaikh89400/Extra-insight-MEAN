@@ -1,0 +1,26 @@
+table {
+  width: 80%;
+  margin-left: 350px;
+  margin-right: auto;
+}
+
+table tr {
+  margin: 20px;
+}
+
+.tr-pad {
+  margin: 50px;
+}
+
+table tr td label {
+  font-weight: 600;
+  font-size: larger;
+}
+
+table tr td input {
+  width: 300px;
+  height: 35px;
+  border: 2px solid gray;
+  border-radius: 4px;
+  font-size: larger;
+}
